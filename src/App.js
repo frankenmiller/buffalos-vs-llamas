@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-function Square({ value, onSquareClick }) {
-  // <!------------------- Square()
+function Square({ value, onSquareClick }) { // <!------------------- Square()
+  const [darkMode, setDarkMode] = useState(true);
   return (
-    <button className="square" onClick={onSquareClick}>
-      {value}
+    <button className="square"
+      onClick={onSquareClick}> {value}
     </button>
   );
 } // <!------------------------------------------------------------ Square()
@@ -13,6 +13,7 @@ export default function Board() {
   // <!----------------------------- Board()
   const [XisNext, setXisNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
+  const [darkMode, setDarkMode] = useState(true);
   const winner = calculateWinner(squares);
   let status;
   let loser;
@@ -38,6 +39,7 @@ export default function Board() {
     setSquares(nextSquares);
     setXisNext(!XisNext);
   } // <!--------------------------------------------------- handleClick()
+
   if (winner) {
     status = winner + winner + winner + "'s Win!";
     loser = (XisNext ? "🦬" : "🦙") + (XisNext ? "🦬" : "🦙") + "'s SUCK!";
@@ -68,16 +70,29 @@ export default function Board() {
   }
 
   return (
-    <>
-      <p>
+    <div className={darkMode ? "dark-mode" : "light-mode"}>
+      <div className="container">
+        <span id="sunandmoon">☀️</span>
+        <div className="switch-checkbox">
+        <label className="switch">
+        <input type="checkbox" 
+        onChange={() => setDarkMode(!darkMode)}
+        />
+        <span className="slider round"> </span>
+        </label>
+        </div>
+        <span id="sunandmoon">🌓</span>
+        
+      </div >         
+      <p className={darkMode ? "dark-mode" : "light-mode"}>
         Frankenmiller's Tic-Tac-Toe game
         <br />
         Created January 2023 in ReactJS
       </p>
-      <div className="bufficorns">{bufficornBrigade}</div>
-      <div className="gamebox">
-        <div className="status">{status}</div>
-        <div className="loser_box">{loser}</div>
+      <p className={darkMode ? "bufficorns light-mode" : "bufficorns dark-mode"}>🦬 Buffaloes vs llamas 🦙</p>
+      <div className={darkMode ? "gamebox light-mode" : "gamebox dark-mode"}>
+        <div className={darkMode ? "status light-mode" : "status dark-mode"}>{status}</div>
+        <div className={darkMode ? "loser_box light-mode" : "loser_box dark-mode"}>{loser}</div>
         <div className="instructions" id="line_one">
           {instructLineOne}
         </div>
@@ -90,7 +105,7 @@ export default function Board() {
         <div className="instructions" id="line_four">
           {instructLineFour}
         </div>
-        <div className="board-row">
+        <div className={darkMode ? "board-row dark-mode" : "board-row light-mode"}>
           <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
           <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
           <Square value={squares[2]} onSquareClick={() => handleClick(2)} />
@@ -107,10 +122,10 @@ export default function Board() {
         </div>
       </div>
       <div className="footer">
-        <div className="social_links" id="linkedin">{linkedin}</div>
-        <div className="social_links" id="github">{github}</div>
-      </div>
-    </>
+        <div className={darkMode ? "social_links dark-mode" : "social_links light-mode"} id="linkedin">{linkedin}</div>
+        <div className={darkMode ? "social_links dark-mode" : "social_links light-mode"} id="github">{github}</div>
+      </div>     
+    </div>
   );
 } // <!------------------------------------------------------------- Board()
 
@@ -134,3 +149,4 @@ function calculateWinner(squares) {
   }
   return null;
 } // <!---------------------------------------------------- calculateWinner()
+
