@@ -72,12 +72,17 @@ export default function Board() {
   return (
     <div className={darkMode ? "dark-mode" : "light-mode"}>
       <div className="container">
-        <span>☀️</span>
-        <div className="switch-checkbox"></div>
+        <span id="sunandmoon">☀️</span>
+        <div className="switch-checkbox">
+        <label className="switch">
         <input type="checkbox" 
         onChange={() => setDarkMode(!darkMode)}
-        /> <br />
-        <span>🌓</span>
+        />
+        <span className="slider round"> </span>
+        </label>
+        </div>
+        <span id="sunandmoon">🌓</span>
+        
       </div >         
       <p className={darkMode ? "dark-mode" : "light-mode"}>
         Frankenmiller's Tic-Tac-Toe game
