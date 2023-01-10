@@ -14,6 +14,7 @@ export default function Board() {
   const [XisNext, setXisNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [darkMode, setDarkMode] = useState(true);
+  const [inChinese, setInChinese] = useState(true);
   const winner = calculateWinner(squares);
   let status;
   let loser;
@@ -50,14 +51,25 @@ export default function Board() {
     linkedin = (XisNext ? "🧑🏽‍💻 Let's hang out and BUIDL" : "linkedin.com/in/frankenmiller");
     github = (XisNext ? "https://github.com/frankenmiller" : "🧑🏽‍💻 I want to be on your team!")    
   } else {
-    status = "Next player: " + (XisNext ? "🦬" : "🦙");
-    loser = "FIGHT! FIGHT!";
-    instructLineOne = "Take turns clicking on";
-    instructLineTwo = "squares. The 1st player";
-    instructLineThree = "to get all 3-in-a-row will";
-    instructLineFour = "be declared the winner!";
-    linkedin = (XisNext ? "I want to be on your team!" : "linkedin.com/in/frankenmiller");
-    github = (XisNext ? "https://github.com/frankenmiller" : "Let's build cool things together")
+    if (inChinese) {
+      status = "下位动物: " + (XisNext ? "🦬" : "🦙");
+      loser = "战斗战斗啊!";
+      instructLineOne = "轮流点按正方形 第一";
+      instructLineTwo = "个连续获得所有三个的";
+      instructLineThree = "球员会将赢得比赛呀";
+      instructLineFour = "________________";
+      linkedin = (XisNext ? "我想跟你创建程序" : "linkedin.com/in/frankenmiller");
+      github = (XisNext ? "https://github.com/frankenmiller" : "让我们一起创建顺利的程序")
+    } else {
+      linkedin = (XisNext ? "I want to be on your team!" : "linkedin.com/in/frankenmiller");
+      github = (XisNext ? "https://github.com/frankenmiller" : "Let's build cool things together")
+      instructLineOne = "Take turns clicking on";
+      instructLineTwo = "squares. The 1st player";
+      instructLineThree = "to get all 3-in-a-row will";
+      instructLineFour = "be declared the winner!";
+      loser = "FIGHT! FIGHT!";
+      status = "Next player: " + (XisNext ? "🦬" : "🦙");
+    }
   }
   if (winner) {
     if (calculateWinner(squares) === "🦬") {
@@ -71,8 +83,8 @@ export default function Board() {
 
   return (
     <div className={darkMode ? "dark-mode" : "light-mode"}>
-      <div className="container">
-        <span id="sunandmoon">☀️</span>
+      <div className="dark-mode-container">
+        <span id="sunandmoon">🌓</span>
         <div className="switch-checkbox">
         <label className="switch">
         <input type="checkbox" 
@@ -81,28 +93,46 @@ export default function Board() {
         <span className="slider round"> </span>
         </label>
         </div>
-        <span id="sunandmoon">🌓</span>
-        
-      </div >         
+        <span id="sunandmoon">☀️</span>
+      </div >
+      <div className="china-container">
+        <span id="switch-script">中文</span>
+        <div className="switch-checkbox">
+        <label className="switch">
+        <input type="checkbox" 
+        onChange={() => setInChinese(!inChinese)}
+        />
+        <span className="slider round"> </span>
+        </label>
+        </div>
+        <span id="usflag">🇺🇸</span>
+      </div >
       <p className={darkMode ? "dark-mode" : "light-mode"}>
-        Frankenmiller's Tic-Tac-Toe game
+        {inChinese ? "富蓝克迷拉的井字棋电子游戏" : "Frankenmiller's Tic-Tac-Toe game"}
         <br />
-        Created January 2023 in ReactJS
+        {inChinese ? "在ReactJS中创建了2023年1月" : "Created January 2023 in ReactJS"}
       </p>
-      <p className={darkMode ? "bufficorns light-mode" : "bufficorns dark-mode"}>🦬 Buffaloes vs llamas 🦙</p>
+      <p className={darkMode ? "bufficorns light-mode" : "bufficorns dark-mode"}>
+        {inChinese ? "🦬 水牛对阵美洲驼 🦙" : "🦬 Buffaloes vs llamas 🦙"}</p>
       <div className={darkMode ? "gamebox light-mode" : "gamebox dark-mode"}>
-        <div className={darkMode ? "status light-mode" : "status dark-mode"}>{status}</div>
-        <div className={darkMode ? "loser_box light-mode" : "loser_box dark-mode"}>{loser}</div>
-        <div className="instructions" id="line_one">
+        <div id={inChinese ? "status_chinese" : "status_english"}
+        className={darkMode ? "status light-mode" : "status dark-mode"}>{status}</div>
+        <div id={inChinese ? "loser_box_chinese" : "loser_box_english"}
+        className={darkMode ? "loser_box light-mode" : "loser_box dark-mode"}>{loser}</div>
+        <div className={inChinese ? "chinese_instructions" : "english_instructions"}
+           id={inChinese ? "line_first" :"line_one"}>
           {instructLineOne}
         </div>
-        <div className="instructions" id="line_two">
+        <div className={inChinese ? "chinese_instructions" : "english_instructions"}
+        id={inChinese ? "line_second" : "line_two"}>
           {instructLineTwo}
         </div>
-        <div className="instructions" id="line_three">
+        <div className={inChinese ? "chinese_instructions" : "english_instructions"}
+          id={inChinese ? "line_third" : "line_three"}>
           {instructLineThree}
         </div>
-        <div className="instructions" id="line_four">
+        <div className={inChinese ? "chinese_instructions" : "english_instructions"} 
+        id={inChinese ? "line_zero" :"line_four"}>
           {instructLineFour}
         </div>
         <div className={darkMode ? "board-row dark-mode" : "board-row light-mode"}>

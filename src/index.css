@@ -88,12 +88,20 @@ p.dark-mode {
 .status {
   position: absolute;
   text-align: center;
-  transform: translate(-160px, 150px);
   padding: 5px;
-  font-size: 20px;
   font-weight: bold;
   -webkit-transition: .4s;
   transition: .4s;  
+}
+
+#status_chinese {
+  font-size: 22px;
+  transform: translate(-150px, 150px);
+}
+
+#status_english {
+  transform: translate(-160px, 150px);
+  font-size: 20px;
 }
 
 .status.dark-mode {
@@ -111,13 +119,22 @@ p.dark-mode {
 .loser_box {
   position: absolute;
   text-align: center;
-  height: 40px;
-  transform: translate(-160px, -3px);
-  padding: 5px;
-  font-size: 20px;
+  padding: 1px;
   font-weight: bold;
   -webkit-transition: .4s;
   transition: .4s;  
+  height: 40px;
+}
+
+#loser_box_chinese {
+  font-size: 25px;
+  transform: translate(-150px, -3px);
+}
+
+#loser_box_english {
+  transform: translate(-160px, -3px);
+  padding-top: 5px;
+  font-size: 20px;
 }
 
 .loser_box.dark-mode {
@@ -133,26 +150,52 @@ p.dark-mode {
 
 }
 
-.instructions {
+.english_instructions {
   position: absolute;
   color: #fff;
   text-align: center;
   background: #000;
   padding: 5px;
-  font-size: 12px;
   font-weight: bold;
+  font-size: 12px;
+}
+
+.chinese_instructions {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  background: #000;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#line_zero {
+  display: none;
 }
 
 #line_one {
   transform: translate(-158px, 45px);
 }
 
+#line_first {
+  transform: translate(-153px, 55px);
+}
+
 #line_two {
   transform: translate(-158px, 68px);
 }
 
+#line_second {
+  transform: translate(-158px, 78px);
+}
+
 #line_three {
   transform: translate(-155px, 91px);
+}
+
+#line_third {
+  transform: translate(-152px, 101px);
 }
 
 #line_four {
@@ -241,12 +284,30 @@ p.dark-mode {
   font-size: 30px;
 }
 
-.container {
+.dark-mode-container {
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10;
-  transform: translate(-120px, -5px);
+  transform: translate(-105px, -5px);
+}
+
+.china-container {  
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  transform: translate(380px, -58px);
+}
+
+#switch-script {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#usflag {
+  font-size: 32px;
 }
 
 .switch {
