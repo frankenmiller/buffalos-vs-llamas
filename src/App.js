@@ -42,14 +42,20 @@ export default function Board() {
   } // <!--------------------------------------------------- handleClick()
 
   if (winner) {
-    status = winner + winner + winner + "'s Win!";
-    loser = (XisNext ? "🦬" : "🦙") + (XisNext ? "🦬" : "🦙") + "'s SUCK!";
-    instructLineOne = "Thank you for testing my";
-    instructLineTwo = "game! Please hit browser";
-    instructLineThree = "refresh button play 🦬's ";
-    instructLineFour = "vs 🦙's again and again!";
-    linkedin = (XisNext ? "🧑🏽‍💻 Let's hang out and BUIDL" : "linkedin.com/in/frankenmiller");
-    github = (XisNext ? "https://github.com/frankenmiller" : "🧑🏽‍💻 I want to be on your team!")    
+    if (inChinese) {
+      status = winner + winner + winner + "赢了啊";
+      loser = (XisNext ? "🦬" : "🦙") + (XisNext ? "🦬" : "🦙") + "太烂了!";
+      instructLineOne = "谢谢玩我创建的电子";
+      instructLineTwo = "游戏 请点击你浏览器";
+      instructLineThree = "刷新按钮来再玩🦬对🦙";    
+    } else {
+      instructLineOne = "Thank you for testing my";
+      instructLineTwo = "game! Please hit browser";
+      instructLineThree = "refresh button play 🦬's ";
+      instructLineFour = "vs 🦙's again and again!";
+      linkedin = (XisNext ? "🧑🏽‍💻 Let's hang out and BUIDL" : "linkedin.com/in/frankenmiller");
+      github = (XisNext ? "https://github.com/frankenmiller" : "🧑🏽‍💻 I want to be on your team!")    
+    }
   } else {
     if (inChinese) {
       status = "下位动物: " + (XisNext ? "🦬" : "🦙");
