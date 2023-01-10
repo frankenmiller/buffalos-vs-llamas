@@ -58,9 +58,11 @@ export default function Board() {
       instructLineTwo = "个连续获得所有三个的";
       instructLineThree = "球员会将赢得比赛呀";
       instructLineFour = "________________";
+      linkedin = (XisNext ? "我想跟你创建程序" : "linkedin.com/in/frankenmiller");
+      github = (XisNext ? "https://github.com/frankenmiller" : "让我们一起创建顺利的程序")
+    } else {
       linkedin = (XisNext ? "I want to be on your team!" : "linkedin.com/in/frankenmiller");
       github = (XisNext ? "https://github.com/frankenmiller" : "Let's build cool things together")
-    } else {
       instructLineOne = "Take turns clicking on";
       instructLineTwo = "squares. The 1st player";
       instructLineThree = "to get all 3-in-a-row will";
