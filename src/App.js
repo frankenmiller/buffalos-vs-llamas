@@ -43,11 +43,13 @@ export default function Board() {
 
   if (winner) {
     if (inChinese) {
-      status = winner + winner + winner + "赢了啊";
+      status = winner + winner + winner + "赢了";
       loser = (XisNext ? "🦬" : "🦙") + (XisNext ? "🦬" : "🦙") + "太烂了!";
       instructLineOne = "谢谢玩我创建的电子";
       instructLineTwo = "游戏 请点击你浏览器";
       instructLineThree = "刷新按钮来再玩🦬对🦙";    
+      linkedin = (XisNext ? "我想跟你创建程序" : "linkedin.com/in/frankenmiller");
+      github = (XisNext ? "https://github.com/frankenmiller" : "让我们一起创建顺利的程序")      
     } else {
       instructLineOne = "Thank you for testing my";
       instructLineTwo = "game! Please hit browser";
