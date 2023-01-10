@@ -150,14 +150,24 @@ p.dark-mode {
 
 }
 
-.instructions {
+.english_instructions {
   position: absolute;
   color: #fff;
   text-align: center;
   background: #000;
   padding: 5px;
-  font-size: 12px;
   font-weight: bold;
+  font-size: 12px;
+}
+
+.chinese_instructions {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  background: #000;
+  padding: 5px;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 #line_zero {
@@ -279,7 +289,7 @@ p.dark-mode {
   justify-content: center;
   align-items: center;
   z-index: 10;
-  transform: translate(-120px, -5px);
+  transform: translate(-115px, -5px);
 }
 
 .china-container {  

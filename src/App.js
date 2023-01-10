@@ -111,22 +111,26 @@ export default function Board() {
         {inChinese ? "在ReactJS中创建了2023年1月" : "Created January 2023 in ReactJS"}
       </p>
       <p className={darkMode ? "bufficorns light-mode" : "bufficorns dark-mode"}>
-        {inChinese ? "🦬 水牛队对阵美洲驼队 🦙" : "🦬 Buffaloes vs llamas 🦙"}</p>
+        {inChinese ? "🦬 水牛对阵美洲驼 🦙" : "🦬 Buffaloes vs llamas 🦙"}</p>
       <div className={darkMode ? "gamebox light-mode" : "gamebox dark-mode"}>
         <div id={inChinese ? "status_chinese" : "status_english"}
         className={darkMode ? "status light-mode" : "status dark-mode"}>{status}</div>
         <div id={inChinese ? "loser_box_chinese" : "loser_box_english"}
         className={darkMode ? "loser_box light-mode" : "loser_box dark-mode"}>{loser}</div>
-        <div className="instructions" id={inChinese ? "line_first" :"line_one"}>
+        <div className={inChinese ? "chinese_instructions" : "english_instructions"}
+           id={inChinese ? "line_first" :"line_one"}>
           {instructLineOne}
         </div>
-        <div className="instructions" id={inChinese ? "line_second" : "line_two"}>
+        <div className={inChinese ? "chinese_instructions" : "english_instructions"}
+        id={inChinese ? "line_second" : "line_two"}>
           {instructLineTwo}
         </div>
-        <div className="instructions" id={inChinese ? "line_third" : "line_three"}>
+        <div className={inChinese ? "chinese_instructions" : "english_instructions"}
+          id={inChinese ? "line_third" : "line_three"}>
           {instructLineThree}
         </div>
-        <div className="instructions" id={inChinese ? "line_zero" :"line_four"}>
+        <div className={inChinese ? "chinese_instructions" : "english_instructions"} 
+        id={inChinese ? "line_zero" :"line_four"}>
           {instructLineFour}
         </div>
         <div className={darkMode ? "board-row dark-mode" : "board-row light-mode"}>
