@@ -8,18 +8,21 @@ import App from './App';
 import About from './routes/about'
 import Bufficorn from './routes/bufficorn'
 import Projects from './routes/projects'
+import Certificates from './routes/certificates';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <div>
-        <h1>Hello World</h1>
+        <h1>Frankenmiller's World Welcomes you!</h1>
         <Link to="about">About Frankenmiller</Link>
         <br />
         <Link to="projects">Frankenmiller's Projects</Link>
         <br />
         <Link to="bufficorn">Frankenmiller's Bufficorn</Link>
+        <br />
+        <Link to="certificates">Frankenmiller's Certificates</Link>
         <br />
         <Link to="app">Buffalos versus llamas</Link>
       </div>
@@ -32,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: "about",
     element: <About />,
+  },
+  {
+    path: "certificates",
+    element: <Certificates />,
   },
   {
     path: "projects",
