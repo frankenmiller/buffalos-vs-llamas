@@ -43,7 +43,7 @@ p {
   text-align: center;
   word-wrap: normal;
   margin-left: 50%;
-  transform: translate(-180px, -30px);
+  transform: translate(-180px, -80px);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -67,7 +67,7 @@ p.dark-mode {
   -webkit-transition: .4s;
   transition: .4s;  
   text-align: center;
-  transform: translate(-180px, -50px);
+  transform: translate(-180px, -100px);
   width: 350px;
   font-size: 25px;
   padding-left: 5px;
@@ -207,7 +207,7 @@ p.dark-mode {
   width: 199px;
   height: 198px;
   margin-left: 50%;
-  transform: translate(-28px, -70px);
+  transform: translate(-28px, -120px);
   border: 3px solid #FFF;
 }
 
@@ -274,11 +274,11 @@ p.dark-mode {
 }
 
 #github {
-  transform: translate(-180px, -60px);
+  transform: translate(-180px, -110px);
 }
 
 #linkedin {
-  transform: translate(-180px, -65px);
+  transform: translate(-180px, -115px);
 }
 
 #sunandmoon {

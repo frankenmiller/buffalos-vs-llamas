@@ -8,11 +8,10 @@
   
   .china-container {  
     display: flex;
-    position: absolute;
     justify-content: center;
     align-items: center;
     z-index: 10;
-    transform: translate(200px, -58px);
+    transform: translate(90px, -58px);
   }
   
   #switch-script {
