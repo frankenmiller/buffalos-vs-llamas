@@ -164,6 +164,9 @@ export default function Board() {
       <div className="footer">
         <div className={darkMode ? "social_links dark-mode" : "social_links light-mode"} id="linkedin">{linkedin}</div>
         <div className={darkMode ? "social_links dark-mode" : "social_links light-mode"} id="github">{github}</div>
+        <br /><br />
+        <br /><br />
+        <br /><br />
       </div>     
     </div>
   );

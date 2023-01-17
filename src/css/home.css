@@ -1,0 +1,49 @@
+body {
+    background: linear-gradient(to top, black 20%, #5c4033, darkgreen, #00f260, #0575e6);
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    line-height: 55px;
+}
+
+.link {
+    margin-left: 55px;
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25px;
+    list-style-position: outside;
+}
+
+#bullet_one {
+    position: absolute;
+    transform: translate(20px, 138px);
+}
+
+#bullet_two {
+    position: absolute;
+    transform: translate(20px, 163px);
+}
+
+#bullet_three {
+    position: absolute;
+    transform: translate(20px, 188px);
+}
+
+#bullet_four {
+    position: absolute;
+    transform: translate(20px, 213px);
+}
+
+#bullet_five {
+    position: absolute;
+    transform: translate(20px, 238px);
+}
+
+span#littleto {
+    position: absolute;
+    transform: translate(-175px, 28px);
+    font-size: 22px;
+}
