@@ -3,6 +3,7 @@ import { createRoot, ReactDOM } from "react-dom/client";
 import { createBrowserRouter, RouterProvider, 
   Route, Link } from "react-router-dom";
 import './css/index.css';
+import './css/home.css';
 import './css/slider.css';
 import App from './App';
 import About from './routes/about'
@@ -15,16 +16,21 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <div>
-        <h1>Frankenmiller's World Welcomes you!</h1>
-        <Link to="about">About Frankenmiller</Link>
+        <img src={require ("./images/bullet.png")} id='bullet_one' alt="bullet_one" />
+        <img src={require ("./images/bullet.png")} id='bullet_two' alt="bullet_one" />
+        <img src={require ("./images/bullet.png")} id='bullet_three' alt="bullet_one" />
+        <img src={require ("./images/bullet.png")} id='bullet_four' alt="bullet_one" />
+        <img src={require ("./images/bullet.png")} id='bullet_five' alt="bullet_one" />
+        <h1>🌍 We welcome you 🌍<span id="littleto">to</span>Frankenmiller's World!</h1>
+        <Link className='link' to="projects">Frankenmiller's Projects</Link>
         <br />
-        <Link to="projects">Frankenmiller's Projects</Link>
+        <Link className='link' to="bufficorn">Frankenmiller's Bufficorn</Link>
         <br />
-        <Link to="bufficorn">Frankenmiller's Bufficorn</Link>
+        <Link className='link' to="certificates">Frankenmiller's Certificates</Link>
         <br />
-        <Link to="certificates">Frankenmiller's Certificates</Link>
+        <Link className='link' to="about">About Frankenmiller</Link>
         <br />
-        <Link to="app">Buffalos versus llamas</Link>
+        <Link  className='link' to="app">Buffalos versus llamas</Link>
       </div>
     ),
   },
