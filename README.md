@@ -7,5 +7,3 @@ So as of Tues/3rd/Jan/2023 I've only programmed the user interface, if tap on th
 One of the things I'd really like to learn if anyone has time to teach me is how get this app up on GitHub pages... I know it req's a few extra commands and perhaps another dependency for react-build? I'll learn it at some point but if you want tutor me I be super good student!
 
 I really love learning software, so I'm really hoping to team up with you soon! -frankenmiller
-
---update sun/15/Jan/2023 The project is up at codesandbox.io/embed/github/frankenmiller/buffalos-vs-llamas/
